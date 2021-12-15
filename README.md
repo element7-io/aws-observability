@@ -1,16 +1,23 @@
-# Service Discovery for Amazon ECS (made easy)
+## 1, Enable Service Discovery for Amazon ECS
 
-This slightly enhanced version of the CloudWatch agent brings Service Discovery for ECS.
+A key component of this observability setup is Service Discovery setup for ECS. In order to 
+allow Prometheus to do its job it needs a to know the private ip's of the various containers running
+on ECS.  Sadly Service Dsicovery for ECS doesn't come out of the box (yet).
 
 From : [Detailed guide for autodiscovery on Amazon ECS
 clusters](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-Setup-autodiscovery-ecs.html)
 > **There is no built-in service discovery for Amazon ECS. The CloudWatch agent adds this mechanism.**
 
+AWS itself has created a CloudFormation stack in order to make Service Discovery on ECS possible:
+[AWS CloudWatch agent installation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-install-ECS.html) 
 
-## Install the CloudWatch agent
-The [AWS CloudWatch agent installation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContainerInsights-Prometheus-install-ECS.html) procedure as described by AWS is somewhat cumbersome IMHO. This repository contains a refactored solution that should make installation a tad easier.
+The procedure AWS describes is somewhat cumbersome IMHO. Therefor the first component in this setup 
+is a refactored solution of that statck that should make installation a tad easier.
 
-## Configuration
+
+
+
+### Configuration
 
 ```
 {
@@ -50,6 +57,5 @@ The [AWS CloudWatch agent installation](https://docs.aws.amazon.com/AmazonCloudW
 }
 ```
 
-Introduce the possibility to block the enrolment of the artifacts bucket on the account level.
-
+## Install the CloudWatch agent
 
