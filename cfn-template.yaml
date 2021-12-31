@@ -205,7 +205,7 @@ Resources:
       Encrypted: true
       LifecyclePolicies:
         - TransitionToIA: AFTER_14_DAYS
-          TransitionToPrimaryStorageClass: AFTER_1_ACCESS
+        - TransitionToPrimaryStorageClass: AFTER_1_ACCESS
       FileSystemTags:
         - Key: Name
           Value: efs-sd-to-prometheus-gate-cfn
